@@ -2,7 +2,11 @@
 
 #include "TankPlayerController.h"
 
-
+void ATankPlayerController::BeginPlay()
+{
+	Super::BeginPlay();
+	UE_LOG(LogTemp, Warning, TEXT("was up"));
+}
 
 ATank* ATankPlayerController::GetControlledTank() const
 {
