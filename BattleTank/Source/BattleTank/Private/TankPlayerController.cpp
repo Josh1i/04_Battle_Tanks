@@ -5,7 +5,15 @@
 void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
-	UE_LOG(LogTemp, Warning, TEXT("was up"));
+	
+	auto controlledTank = GetControlledTank();
+	if (!controlledTank)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("not possesed"));
+
+	}
+	else { UE_LOG(LogTemp, Warning, TEXT("tank is possesed")) }
+
 }
 
 ATank* ATankPlayerController::GetControlledTank() const
