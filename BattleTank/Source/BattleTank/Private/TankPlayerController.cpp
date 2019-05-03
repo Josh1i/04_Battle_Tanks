@@ -15,8 +15,22 @@ void ATankPlayerController::BeginPlay()
 	else { UE_LOG(LogTemp, Warning, TEXT("tank is possesed")) }
 
 }
+void ATankPlayerController::Tick(float DeltaTime)
+{
+
+	Super::Tick(DeltaTime);
+	AimTowardsCrosshair();
+	UE_LOG(LogTemp, Warning, TEXT("ticking"));
+}
 
 ATank* ATankPlayerController::GetControlledTank() const
 {
 	return Cast<ATank>(GetPawn());
+}
+
+void ATankPlayerController::AimTowardsCrosshair()
+{
+	if (!GetControlledTank()) {return}
+
+	
 }

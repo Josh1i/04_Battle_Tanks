@@ -15,11 +15,12 @@ class BATTLETANK_API ATankPlayerController : public APlayerController
 	GENERATED_BODY()
 	
 public:
+	virtual void Tick(float DeltaTime) override;
 	ATank* GetControlledTank() const;
 
 	 virtual void BeginPlay() override;
 
-
-	
+	 //start tank  moving barel with crosshair in world
+	 void AimTowardsCrosshair();
 	
 };
